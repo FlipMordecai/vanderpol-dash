@@ -115,9 +115,9 @@ def update_graph(mu, A, omega):
     fig.add_trace(go.Scatter(x=w_unforced, y=mag_unforced, mode='lines', name='FFT Libre', line=dict(color='green', width=2), opacity=0.7), row=1, col=3)
     fig.add_trace(go.Scatter(x=w_forced, y=mag_forced, mode='lines', name='FFT Forzado', line=dict(color='purple', width=2), opacity=0.7), row=1, col=3)
     
-    fig.add_vline(x=omega_natural, line_width=1.5, line_dash="dash", line_color="green", row=1, col=3)
+    fig.add_vline(x=omega_natural, line_width=1.5, line_dash="dash", line_color="green", row=1, col=3, name='Omega Natural')
     if A > 0:
-        fig.add_vline(x=omega, line_width=1.5, line_dash="dash", line_color="purple", row=1, col=3)
+        fig.add_vline(x=omega, line_width=1.5, line_dash="dash", line_color="purple", row=1, col=3, name='Omega Forzamiento')
 
     y_lim_phase = np.max(np.abs(sol_forced[plot_idx:, 1])) * 1.2 if mu > 0.5 else 3
 
