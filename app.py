@@ -119,12 +119,13 @@ def update_graph(mu, A, omega):
     if A > 0:
         fig.add_vline(x=omega, line_width=1.5, line_dash="dash", line_color="purple", row=1, col=3, name='Omega Forzamiento')
 
-    y_lim_phase = np.max(np.abs(sol_forced[:, 1])) * 1.2 if mu > 0.5 else 3
+    y_lim_phase = np.max(np.abs(sol_forced[:, 1])) * 1.2 
+    x_lim_phase = np.max(np.abs(sol_forced[:, 0])) * 1.2
 
     fig.update_layout(margin=dict(l=40, r=40, t=60, b=40), legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5), plot_bgcolor='white', paper_bgcolor='#f9f9f9')
     fig.update_xaxes(title_text="Tiempo", row=1, col=1, showgrid=True, gridcolor='lightgray')
     fig.update_yaxes(title_text="Amplitud x", row=1, col=1, showgrid=True, gridcolor='lightgray')
-    fig.update_xaxes(title_text="x", range=[-3.5, 3.5], row=1, col=2, showgrid=True, gridcolor='lightgray')
+    fig.update_xaxes(title_text="x", range=[-x_lim_phase, x_lim_phase], row=1, col=2, showgrid=True, gridcolor='lightgray')
     fig.update_yaxes(title_text="y (Variable Liénard)", range=[-y_lim_phase, y_lim_phase], row=1, col=2, showgrid=True, gridcolor='lightgray')
     fig.update_xaxes(title_text="Frecuencia Angular (ω) [rad/s]", range=[0, max(omega_natural, omega) * 3], row=1, col=3, showgrid=True, gridcolor='lightgray')
     fig.update_yaxes(title_text="Magnitud", row=1, col=3, showgrid=True, gridcolor='lightgray')
