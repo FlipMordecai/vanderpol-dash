@@ -35,7 +35,7 @@ app.layout = html.Div(style={'fontFamily': 'Arial, sans-serif', 'padding': '20px
     html.Div(style={'display': 'flex', 'gap': '40px', 'marginBottom': '20px', 'padding': '20px', 'backgroundColor': '#f9f9f9', 'borderRadius': '10px'}, children=[
         html.Div(style={'flex': 1}, children=[
             html.Label("Parámetro no lineal (Mu):", style={'fontWeight': 'bold'}),
-            dcc.Slider(min=0.1, max=15.0, step=0.1, value=1.5, id='mu-slider', marks={i: str(i) for i in range(1, 6)})
+            dcc.Slider(min=0.1, max=15.0, step=0.1, value=1.5, id='mu-slider', marks={i: str(i) for i in range(1, 16,3)})
         ]),
         html.Div(style={'flex': 1}, children=[
             html.Label("Amplitud del Forzamiento (A):", style={'fontWeight': 'bold'}),
