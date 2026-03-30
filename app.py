@@ -119,7 +119,7 @@ def update_graph(mu, A, omega):
     if A > 0:
         fig.add_vline(x=omega, line_width=1.5, line_dash="dash", line_color="purple", row=1, col=3, name='Omega Forzamiento')
 
-    y_lim_phase = np.max(np.abs(sol_forced[plot_idx:, 1])) * 1.2 if mu > 0.5 else 3
+    y_lim_phase = np.max(np.abs(sol_forced[:, 1])) * 1.2 if mu > 0.5 else 3
 
     fig.update_layout(margin=dict(l=40, r=40, t=60, b=40), legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5), plot_bgcolor='white', paper_bgcolor='#f9f9f9')
     fig.update_xaxes(title_text="Tiempo", row=1, col=1, showgrid=True, gridcolor='lightgray')
