@@ -58,7 +58,7 @@ app.layout = html.Div(style={'fontFamily': 'Arial, sans-serif', 'padding': '20px
 )
 def update_graph(mu, A, omega):
     transient_fft_ratio = 0.1  
-    transient_plot_ratio = 0.5 
+    transient_plot_ratio = 0.8 
     fft_idx = int(num_points * transient_fft_ratio)
     plot_idx = int(num_points * transient_plot_ratio)
 
